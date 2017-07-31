@@ -20,9 +20,7 @@ alias mexit='mpg321exit'
 alias mcurrent='mpg321current'
 alias mcur='mpg321current'
 
-# Should I scrap this for mplay?
-# That's a more sophisticated wrapper script, seems to cover everything but mcur...but does it work?
-
+# Use locate to generate album playlists
 function play_album() {
 	ALBUM_TITLE="$@";
 	locate "$ALBUM_TITLE" -i | grep mp3$ > "$MY_LOCATION/mp3list";

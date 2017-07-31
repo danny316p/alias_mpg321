@@ -3,7 +3,7 @@
 
 #Configuration options
 MY_LOCATION="$HOME/github/alias_mpg321";
-alias m='mpg321 -v -K' # Turn on verbosity for duration info, basic keys for volume and skip features
+alias m='mpg321 -v ' # Turn on verbosity for duration info.
 
 alias mpg321pause='pkill -SIGSTOP mpg321'
 alias mpg321resume='pkill -SIGCONT mpg321'

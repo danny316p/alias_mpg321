@@ -1,0 +1,33 @@
+# Quick tools for playing mp3s from the command line
+# It's not perfect but it's much easier/faster than a GUI
+
+#Configuration options
+MY_LOCATION="$HOME/github/alias_mpg321";
+alias m='mpg321 -v ' # Turn on verbosity for duration info.
+
+alias mpg321pause='pkill -SIGSTOP mpg321'
+alias mpg321resume='pkill -SIGCONT mpg321'
+alias mpg321stop='pkill -SIGHUP mpg321'
+alias mpg321exit='pkill -SIGKILL mpg321'
+
+# Get the filename of the current track
+alias mpg321current='readlink -f /proc/$(printf "%u" `ps -C mpg321 o pid=`)/fd/3'
+
+alias mpause='mpg321pause'
+alias mresume='mpg321resume'
+alias mstop='mpg321stop'
+alias mexit='mpg321exit'
+alias mcurrent='mpg321current'
+alias mcur='mpg321current'
+
+# Should I scrap this for mplay?
+# That's a more sophisticated wrapper script, seems to cover everything but mcur...but does it work?
+
+function play_album() {
+	ALBUM_TITLE="$@";
+	locate "$ALBUM_TITLE" -i | grep mp3$ > "$MY_LOCATION/mp3list";
+	m --list "$MY_LOCATION/mp3list";
+	rm "$MY_LOCATION/mp3list";
+}
+
+

@@ -5,7 +5,7 @@ I've tried to keep the mpg321_aliases file fairly self-explanatory. If you want 
 
 To start with, I added aliases for some of the hackier tricks I'd seen online to change mpg321's behavior with one-liners. I've also begun working on tools to quickly find mp3 files and generate playlists. I'd like this to eventually be a full replacement for GUI-based music players. I don't want your streaming services - you can pry my collection from my cold, dead hands, and the digitized version from an equally cold, dead hard drive.
 
-All of these are shell scripts or configuration options that work with a standard mpg321 install - none of these change mpg321 itself or expect any non-standard commands. I've mostly tested these in bash and dash, your results my vary in other shells. 
+All of these are shell scripts or configuration options that work with a standard mpg321 install - none of these change mpg321 itself or expect any non-standard commands. I've mostly tested these in bash and dash, your results may vary in other shells.
 
 ## TODOs:
 These all need to be implemented and shouldn't be too difficult:

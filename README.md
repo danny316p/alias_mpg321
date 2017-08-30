@@ -1,7 +1,7 @@
 # alias_mpg321
 Quick alias-like tools for playing music from the command line that wrap and/or configure mpg321 to make it more user-friendly as a general music player. Mpg321 isn't a perfect music player (it doesn't handle every format I'd like), but it can certainly do enough of what I need without the extra load of GUI-based music players.
 
-I've tried to keep the mpg321_aliases file fairly self-explanatory. If you want to contribute a function or alias, please make it similarly clear - not necessarily commented, but beautiful.
+I've tried to keep the mpg321_aliases file fairly self-explanatory. If you want to contribute a function or alias, please make it similarly clear - not necessarily commented, but beautiful.[1](https://en.wikipedia.org/wiki/Are_You_Experienced%3F_(song))
 
 To start with, I added aliases for some of the hackier tricks I'd seen online to change mpg321's behavior with one-liners. I've also begun working on tools to quickly find mp3 files and generate playlists. I'd like this to eventually be a full replacement for GUI-based music players. I don't want your streaming services - you can pry my collection from my cold, dead hands, and the digitized version from an equally cold, dead hard drive.
 

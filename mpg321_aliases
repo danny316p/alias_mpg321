@@ -21,11 +21,23 @@ alias mcurrent='mpg321current'
 alias mcur='mpg321current'
 
 # Use locate to generate album playlists
-function play_album() {
-	ALBUM_TITLE="$@";
-	locate "$ALBUM_TITLE" -i | grep mp3$ > "$MY_LOCATION/mp3list";
+function mplay_string() {
+	STRING_TITLE="$@";
+	locate "$STRING_TITLE" -i | grep mp3$ | sort > "$MY_LOCATION/mp3list";
 	m --list "$MY_LOCATION/mp3list";
 	rm "$MY_LOCATION/mp3list";
 }
+
+
+# Use locate to generate album playlists
+function mplay_album() {
+	ALBUM_TITLE="$@";
+	# This uses globbing...which requires a call to bash, because xargs won't glob...
+	locate "$ALBUM_TITLE" -i | grep mp3$ | xargs -d \\n dirname | sort | uniq -c | sort -nr | head -n 1 | sed 's/^ *\([0-9]*\) //; s/ /\\ /g' | xargs -I % -d \\n bash -c "ls -d -1 %/*.mp3" > "$MY_LOCATION/mp3list";
+	m --list "$MY_LOCATION/mp3list";
+	rm "$MY_LOCATION/mp3list";
+}
+
+
 
 

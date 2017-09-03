@@ -28,7 +28,6 @@ function mplay_string() {
 	rm "$MY_LOCATION/mp3list";
 }
 
-
 # Use locate to generate album playlists
 function mplay_album() {
 	ALBUM_TITLE="$@";
@@ -38,6 +37,9 @@ function mplay_album() {
 	rm "$MY_LOCATION/mp3list";
 }
 
-
+function mplay() {
+	COMMAND="mplay_$@";
+	bash -i -c "$COMMAND";
+}
 
 

@@ -20,7 +20,7 @@ alias mexit='mpg321exit'
 alias mcurrent='mpg321current'
 alias mcur='mpg321current'
 
-# Use locate to generate album playlists
+# Use locate to generate playlists based on a common word in the filename
 function mplay_string() {
 	STRING_TITLE="$@";
 	locate "$STRING_TITLE" -i | grep mp3$ | sort > "$MY_LOCATION/mp3list";

@@ -13,6 +13,7 @@ These all need to be implemented and shouldn't be too difficult:
 - locate songs on a remote mount, copying it locally for speed (and deleting it after playback)
 - configure last.fm/audioscrobbler options
 - support for non-mp3 file formats (probably with other players, determining which one to use automatically)
+- change "m" command to a function, have it recognize other commands (they're strings without '/' or '.') and only default to taking a file at the command line
 
 This repo is modeled after my alias_lynx project, so these drop right into a .bashrc file, but got their own repository for the sake of convenience and portability. To use, clone the repo and add the following lines to wherever your aliases are stored (most likely .bash_aliases, .bashrc, or .zshrc):
 

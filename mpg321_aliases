@@ -32,7 +32,7 @@ function mplay_string() {
 function mplay_album() {
 	ALBUM_TITLE="$@";
 	# This uses globbing...which requires a call to bash, because xargs won't glob...
-	locate "$ALBUM_TITLE" -i | grep mp3$ | xargs -d \\n dirname | sort | uniq -c | sort -nr | head -n 1 | sed 's/^ *\([0-9]*\) //; s/ /\\ /g' | xargs -I % -d \\n bash -c "ls -d -1 %/*.mp3" > "$MY_LOCATION/mp3list";
+	locate "$ALBUM_TITLE" -i | grep mp3$ | xargs -d \\n dirname | sort | uniq -c | sort -nr | head -n 1 | sed 's/^ *\([0-9]*\) //; s/[^a-zA-Z0-9,._+@%/-]/\\&/g;' | xargs -I % -d \\n bash -c 'ls -d -1 %/*.mp3' > "$MY_LOCATION/mp3list";
 	m --list "$MY_LOCATION/mp3list";
 	rm "$MY_LOCATION/mp3list";
 }
